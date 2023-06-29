@@ -1,4 +1,15 @@
 export const colors = {
+  white: '#ffffff',
+  green: {
+    50: '#f0fdf4',
+    100: '#bbf7d0',
+    200: '#bbf7d0',
+    300: '#86efac',
+    400: '#4ade80',
+    500: '#22c55e',
+    600: '#16a34a',
+    700: '#15803d',
+  },
   gray: {
     50: '#f9fafb',
     100: '#f3f4f6',
