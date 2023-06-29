@@ -43,6 +43,6 @@ export const ChatUserList: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     gap: 10,
-    paddingVertical: 24,
+    paddingVertical: 16,
   },
 });

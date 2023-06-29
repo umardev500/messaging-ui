@@ -1,3 +1,3 @@
 export type RootStackParamList = {
-  HomePage: undefined;
+  MainStack: undefined;
 };
