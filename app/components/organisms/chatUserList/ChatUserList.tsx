@@ -1,16 +1,41 @@
 import { ChatUserListing } from '@app/components/molecules';
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Chat } from '@app/types';
+import React, { useCallback } from 'react';
+import { FlatList, ListRenderItemInfo, StyleSheet, View } from 'react-native';
+
+const data: Chat[] = [
+  {
+    users: [1, 2],
+    messages: [
+      {
+        id: 1,
+        userId: 2,
+        text: 'Oh, thanks so much!',
+        createdAt: 16827999823,
+      },
+    ],
+  },
+];
 
 export const ChatUserList: React.FC = () => {
-  return (
-    <View style={styles.container}>
+  const renderItem = useCallback((info: ListRenderItemInfo<Chat>) => {
+    const { messages } = info.item;
+    const messagesLength = messages.length - 1;
+    const lastMessage = messages[messagesLength];
+
+    return (
       <ChatUserListing
         name="Shawn Jones"
-        text="Oh, thanks so much!"
+        text={lastMessage.text}
         time="09:38 AM"
         avatar={require('@assets/images/avatars/avatar-4.png')}
       />
+    );
+  }, []);
+
+  return (
+    <View style={styles.container}>
+      <FlatList data={data} renderItem={renderItem} />
     </View>
   );
 };
