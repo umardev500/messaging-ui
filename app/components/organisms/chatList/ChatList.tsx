@@ -3,7 +3,7 @@ import { colors } from '@app/constants';
 import { Message, RootStackParamList } from '@app/types';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import React, { useCallback, useState } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, ListRenderItemInfo, StyleSheet, View } from 'react-native';
 
 const ID = 1982;
 
@@ -20,15 +20,19 @@ export const ChatList: React.FC = () => {
     {
       id: 2,
       sender: ID,
-      text: 'See you tomorrow then we can',
+      text: 'Oh, thanks so much!',
       read: true,
     },
   ]);
   const route = useRoute<RouteProps>();
   console.log(route.params.id);
 
-  const renderItem = useCallback(() => {
-    return <ChatListing />;
+  const renderItem = useCallback((info: ListRenderItemInfo<Message>) => {
+    const index = info.index;
+    const message = info.item;
+    // console.log(info.item.);
+
+    return <ChatListing userId={ID} index={index} message={message} />;
   }, []);
 
   return (
@@ -41,7 +45,7 @@ export const ChatList: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.gray[300],
+    backgroundColor: colors.gray[50],
     paddingHorizontal: 16,
     paddingVertical: 16,
   },
