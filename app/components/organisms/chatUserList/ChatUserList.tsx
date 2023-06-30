@@ -28,7 +28,7 @@ const data: Chat[] = [
       id: 1,
       sender: 1667987323,
       recipient: 1778782723,
-      text: 'Hello',
+      text: 'Oh, Thanks so much!',
       read: false,
     },
   },

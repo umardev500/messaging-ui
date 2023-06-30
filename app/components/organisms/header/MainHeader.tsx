@@ -1,3 +1,4 @@
+import { SettingOutline } from '@app/components/atoms';
 import { colors } from '@app/constants';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
@@ -5,8 +6,9 @@ import { StyleSheet, Text, View } from 'react-native';
 export const MainHeader: React.FC = () => {
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.top}>
         <Text style={styles.title}>Hello Fateme</Text>
+        <SettingOutline />
       </View>
     </View>
   );
@@ -18,8 +20,13 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
   },
   title: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: '500',
     color: colors.gray[900],
+  },
+  top: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 });
