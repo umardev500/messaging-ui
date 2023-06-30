@@ -7,7 +7,6 @@ export interface Creds {
 
 export interface UserPicture {
   avatar: string;
-  read: string;
   real: string;
 }
 

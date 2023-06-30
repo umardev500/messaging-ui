@@ -5,43 +5,38 @@ import { FlatList, ListRenderItemInfo, StyleSheet, View } from 'react-native';
 
 const data: Chat[] = [
   {
-    users: [1, 2],
-    messages: [
+    participants: [
       {
-        id: 1,
-        userId: 2,
-        text: 'Oh, thanks so much!',
-        createdAt: 16827999823,
+        id: 1667987323,
+        name: 'Steven',
+        picture: {
+          avatar: 'url',
+          real: 'url',
+        },
+      },
+      {
+        id: 1667987322,
+        name: 'Mark',
+        picture: {
+          avatar: 'url',
+          real: 'url',
+        },
       },
     ],
-  },
-  {
-    users: [1, 2],
-    messages: [
-      {
-        id: 1,
-        userId: 2,
-        text: 'Oh, thanks so much!',
-        createdAt: 168279998231,
-      },
-    ],
+    accepted: true,
+    currentMessage: {
+      id: 1,
+      sender: 1667987323,
+      recipient: 1778782723,
+      text: 'Hello',
+      read: false,
+    },
   },
 ];
 
 export const ChatUserList: React.FC = () => {
   const renderItem = useCallback((info: ListRenderItemInfo<Chat>) => {
-    const { messages } = info.item;
-    const messagesLength = messages.length - 1;
-    const lastMessage = messages[messagesLength];
-
-    return (
-      <ChatUserListing
-        name="Shawn Jones"
-        text={lastMessage.text}
-        time={info.index !== 1 ? '08:15 AM' : '08:12 AM'}
-        avatar={require('@assets/images/avatars/avatar-4.png')}
-      />
-    );
+    return <ChatUserListing chat={info.item} avatar={require('@assets/images/avatars/avatar-4.png')} />;
   }, []);
 
   return (

@@ -1,12 +1,20 @@
+import { Modify } from '../meta';
+import { User } from '../user';
+
 export interface Message {
   id: number;
-  userId: number;
+  sender: number;
+  recipient: number;
   attachment?: string;
   text?: string;
-  createdAt: number;
+  read: boolean;
+  modify?: Modify;
 }
 
+export interface ChatUser extends Omit<User, 'creds' | 'modify'> {}
+
 export interface Chat {
-  users: number[];
-  messages: Message[];
+  participants: ChatUser[];
+  accepted?: boolean;
+  currentMessage: Message;
 }

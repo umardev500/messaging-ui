@@ -1,16 +1,17 @@
-import { Avatar, BadgeCounter, Name, Text } from '@app/components/atoms';
+import { Avatar, Name, Text } from '@app/components/atoms';
 import { colors } from '@app/constants';
+import { Chat } from '@app/types';
 import React, { useCallback } from 'react';
 import { ImageSourcePropType, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 interface Props {
-  name?: string;
-  text?: string;
-  time?: string;
+  chat: Chat;
   avatar: ImageSourcePropType;
 }
 
-export const ChatUserListing: React.FC<Props> = ({ name, text, time, avatar }) => {
+export const ChatUserListing: React.FC<Props> = ({ chat, avatar }) => {
+  const { currentMessage } = chat;
+
   const pressHandler = useCallback(() => {
     console.log('clicked');
   }, []);
@@ -21,17 +22,17 @@ export const ChatUserListing: React.FC<Props> = ({ name, text, time, avatar }) =
         <Avatar dot source={avatar} />
         {/* chat text */}
         <View style={styles.right}>
-          <Name>{name}</Name>
+          <Name>James Bone</Name>
           <Text numberOfLines={1} size={16} color={colors.gray[400]}>
-            {text}
+            {currentMessage.text}
           </Text>
         </View>
         {/* chat status */}
         <View style={styles.rightEnd}>
           <Text numberOfLines={1} color={colors.gray[400]} size={14}>
-            {time}
+            08:20 AM
           </Text>
-          {time !== '08:12 AM' ? <BadgeCounter bg={colors.green[400]} /> : null}
+          {/* <BadgeCounter bg={colors.green[400]} /> */}
         </View>
       </View>
     </TouchableOpacity>
