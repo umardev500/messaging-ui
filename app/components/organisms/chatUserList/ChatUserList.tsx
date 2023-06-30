@@ -5,6 +5,7 @@ import { FlatList, ListRenderItemInfo, StyleSheet, View } from 'react-native';
 
 const data: Chat[] = [
   {
+    id: 1,
     participants: [
       {
         id: 1966,
@@ -27,12 +28,12 @@ const data: Chat[] = [
     currentMessage: {
       id: 1,
       sender: 1667987323,
-      recipient: 1778782723,
       text: 'Oh, Thanks so much!',
       read: false,
     },
   },
   {
+    id: 2,
     participants: [
       {
         id: 1966,
@@ -55,12 +56,12 @@ const data: Chat[] = [
     currentMessage: {
       id: 1,
       sender: 1667987323,
-      recipient: 1778782723,
       text: 'See you tomorrow then we can',
       read: true,
     },
   },
   {
+    id: 3,
     participants: [
       {
         id: 1966,
@@ -83,7 +84,6 @@ const data: Chat[] = [
     currentMessage: {
       id: 1,
       sender: 1667987323,
-      recipient: 1778782723,
       text: 'Hahaha',
       read: true,
     },
