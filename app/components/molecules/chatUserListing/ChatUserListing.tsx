@@ -21,7 +21,9 @@ export const ChatUserListing: React.FC<Props> = ({ chat }) => {
   const recipient = participants.filter(participant => participant.id !== ID)[0];
 
   const pressHandler = useCallback(() => {
-    navigation.navigate('ChatRoomStack');
+    navigation.navigate('ChatRoomStack', {
+      id: chat.id,
+    });
   }, []);
 
   return (

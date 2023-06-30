@@ -1,4 +1,8 @@
+export interface ChatRoomStackParams {
+  id: number;
+}
+
 export type RootStackParamList = {
   MainStack: undefined;
-  ChatRoomStack: undefined;
+  ChatRoomStack: ChatRoomStackParams;
 };
