@@ -15,6 +15,17 @@ const data: Chat[] = [
       },
     ],
   },
+  {
+    users: [1, 2],
+    messages: [
+      {
+        id: 1,
+        userId: 2,
+        text: 'Oh, thanks so much!',
+        createdAt: 168279998231,
+      },
+    ],
+  },
 ];
 
 export const ChatUserList: React.FC = () => {
@@ -27,7 +38,7 @@ export const ChatUserList: React.FC = () => {
       <ChatUserListing
         name="Shawn Jones"
         text={lastMessage.text}
-        time="09:38 AM"
+        time={info.index !== 1 ? '08:15 AM' : '08:12 AM'}
         avatar={require('@assets/images/avatars/avatar-4.png')}
       />
     );
