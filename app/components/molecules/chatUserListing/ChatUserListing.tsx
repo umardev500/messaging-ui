@@ -1,6 +1,8 @@
 import { Avatar, Name, Text } from '@app/components/atoms';
 import { colors } from '@app/constants';
-import { Chat } from '@app/types';
+import { Chat, RootStackParamList } from '@app/types';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import React, { useCallback } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
@@ -10,13 +12,16 @@ interface Props {
   chat: Chat;
 }
 
+type StackProps = StackNavigationProp<RootStackParamList, 'ChatRoomStack'>;
+
 export const ChatUserListing: React.FC<Props> = ({ chat }) => {
+  const navigation = useNavigation<StackProps>();
   const { currentMessage, participants } = chat;
   const isRead = currentMessage.read;
   const recipient = participants.filter(participant => participant.id !== ID)[0];
 
   const pressHandler = useCallback(() => {
-    console.log('clicked');
+    navigation.navigate('ChatRoomStack');
   }, []);
 
   return (
