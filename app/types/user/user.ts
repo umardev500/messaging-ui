@@ -1,3 +1,4 @@
+import { ImageSourcePropType } from 'react-native';
 import { Modify } from '../meta';
 
 export interface Creds {
@@ -6,8 +7,8 @@ export interface Creds {
 }
 
 export interface UserPicture {
-  avatar: string;
-  real: string;
+  avatar: ImageSourcePropType;
+  real: ImageSourcePropType;
 }
 
 export interface User {

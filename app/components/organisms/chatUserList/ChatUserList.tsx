@@ -7,19 +7,19 @@ const data: Chat[] = [
   {
     participants: [
       {
-        id: 1667987323,
-        name: 'Steven',
+        id: 1966,
+        name: 'Sarah Jhonson',
         picture: {
-          avatar: 'url',
-          real: 'url',
+          avatar: require('@assets/images/avatars/avatar.png'),
+          real: require('@assets/images/avatars/avatar.png'),
         },
       },
       {
-        id: 1667987322,
+        id: 1982,
         name: 'Mark',
         picture: {
-          avatar: 'url',
-          real: 'url',
+          avatar: require('@assets/images/avatars/avatar-4.png'),
+          real: require('@assets/images/avatars/avatar-4.png'),
         },
       },
     ],
@@ -32,11 +32,67 @@ const data: Chat[] = [
       read: false,
     },
   },
+  {
+    participants: [
+      {
+        id: 1966,
+        name: 'Shawn Jones',
+        picture: {
+          avatar: require('@assets/images/avatars/avatar-4.png'),
+          real: require('@assets/images/avatars/avatar-4.png'),
+        },
+      },
+      {
+        id: 1982,
+        name: 'Mark',
+        picture: {
+          avatar: require('@assets/images/avatars/avatar-4.png'),
+          real: require('@assets/images/avatars/avatar-4.png'),
+        },
+      },
+    ],
+    accepted: true,
+    currentMessage: {
+      id: 1,
+      sender: 1667987323,
+      recipient: 1778782723,
+      text: 'See you tomorrow then we can',
+      read: true,
+    },
+  },
+  {
+    participants: [
+      {
+        id: 1966,
+        name: 'Bessie Cooper',
+        picture: {
+          avatar: require('@assets/images/avatars/avatar-5.png'),
+          real: require('@assets/images/avatars/avatar-5.png'),
+        },
+      },
+      {
+        id: 1982,
+        name: 'Mark',
+        picture: {
+          avatar: require('@assets/images/avatars/avatar-4.png'),
+          real: require('@assets/images/avatars/avatar-4.png'),
+        },
+      },
+    ],
+    accepted: true,
+    currentMessage: {
+      id: 1,
+      sender: 1667987323,
+      recipient: 1778782723,
+      text: 'Hahaha',
+      read: true,
+    },
+  },
 ];
 
 export const ChatUserList: React.FC = () => {
   const renderItem = useCallback((info: ListRenderItemInfo<Chat>) => {
-    return <ChatUserListing chat={info.item} avatar={require('@assets/images/avatars/avatar-4.png')} />;
+    return <ChatUserListing chat={info.item} />;
   }, []);
 
   return (
