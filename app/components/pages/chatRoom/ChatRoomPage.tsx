@@ -1,4 +1,4 @@
-import { ChatHeader, ChatList } from '@app/components/organisms';
+import { ChatForm, ChatHeader, ChatList } from '@app/components/organisms';
 import { colors } from '@app/constants';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -8,6 +8,7 @@ export const ChatRoomPage: React.FC = () => {
     <View style={styles.container}>
       <ChatHeader />
       <ChatList />
+      <ChatForm />
     </View>
   );
 };
