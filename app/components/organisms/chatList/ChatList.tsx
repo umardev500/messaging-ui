@@ -1,10 +1,13 @@
 import { ChatListing } from '@app/components/molecules';
 import { colors } from '@app/constants';
-import { Message } from '@app/types';
+import { Message, RootStackParamList } from '@app/types';
+import { RouteProp, useRoute } from '@react-navigation/native';
 import React, { useCallback, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
 const ID = 1982;
+
+type RouteProps = RouteProp<RootStackParamList, 'ChatRoomStack'>;
 
 export const ChatList: React.FC = () => {
   const [data] = useState<Message[]>([
@@ -21,6 +24,8 @@ export const ChatList: React.FC = () => {
       read: true,
     },
   ]);
+  const route = useRoute<RouteProps>();
+  console.log(route.params.id);
 
   const renderItem = useCallback(() => {
     return <ChatListing />;
