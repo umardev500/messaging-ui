@@ -46,7 +46,7 @@ export const ChatUserListing: React.FC<Props> = ({ chat }) => {
           <Text
             numberOfLines={1}
             color={!isRead ? colors.gray[600] : colors.gray[400]}
-            size={14}
+            size={13}
             weight={!isRead ? '500' : '400'}>
             08:20 AM
           </Text>
