@@ -35,7 +35,7 @@ export const ChatUserListing: React.FC<Props> = ({ chat }) => {
           <Name>{recipient.name}</Name>
           <Text
             numberOfLines={1}
-            size={16}
+            size={15}
             color={!isRead ? colors.gray[600] : colors.gray[400]}
             weight={!isRead ? '500' : '400'}>
             {currentMessage.text}

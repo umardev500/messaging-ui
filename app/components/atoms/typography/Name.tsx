@@ -7,7 +7,7 @@ interface Props {
 
 export const Name: React.FC<Props> = ({ children }) => {
   return (
-    <Text size={18} weight="500" numberOfLines={1}>
+    <Text size={16} weight="500" numberOfLines={1}>
       {children}
     </Text>
   );
