@@ -18,3 +18,6 @@ export interface User {
   picture: UserPicture;
   modify: Modify;
 }
+
+// user calls
+export interface UserCalls extends Omit<User, 'creds' | 'modify'> {}
