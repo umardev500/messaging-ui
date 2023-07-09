@@ -1,7 +1,7 @@
-import { Avatar, CamSolid, Name } from '@app/components/atoms';
+import { Avatar, CamSolid, Name, PhoneSolid } from '@app/components/atoms';
 import { UserCalls } from '@app/types';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 interface Props {
   user: UserCalls;
@@ -12,12 +12,18 @@ export const CallsListing: React.FC<Props> = ({ user }) => {
 
   return (
     <View style={styles.container}>
-      <Avatar dot source={picture.avatar} />
+      <Avatar size={50} dot source={picture.avatar} />
       <View style={styles.right}>
         <Name>{name}</Name>
       </View>
       <View style={styles.rightEnd}>
-        <CamSolid size={18} />
+        <TouchableOpacity>
+          <PhoneSolid size={15} />
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <CamSolid size={15} />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -40,7 +46,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   rightEnd: {
-    alignItems: 'flex-end',
-    gap: 4,
+    alignItems: 'center',
+    gap: 16,
+    flexDirection: 'row',
   },
 });

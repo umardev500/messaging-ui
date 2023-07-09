@@ -12,6 +12,30 @@ const data: Omit<User, 'creds' | 'modify'>[] = [
       real: require('@assets/images/avatars/avatar-4.png'),
     },
   },
+  {
+    id: 2,
+    name: 'Sarah Jhonson',
+    picture: {
+      avatar: require('@assets/images/avatars/avatar.png'),
+      real: require('@assets/images/avatars/avatar.png'),
+    },
+  },
+  {
+    id: 3,
+    name: 'Bessie Cooper',
+    picture: {
+      avatar: require('@assets/images/avatars/avatar-5.png'),
+      real: require('@assets/images/avatars/avatar-5.png'),
+    },
+  },
+  {
+    id: 4,
+    name: 'Shawley',
+    picture: {
+      avatar: require('@assets/images/avatars/avatar-3.png'),
+      real: require('@assets/images/avatars/avatar-3.png'),
+    },
+  },
 ];
 
 export const CallsList: React.FC = () => {
