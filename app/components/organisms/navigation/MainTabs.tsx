@@ -22,6 +22,7 @@ export const MainTabs: React.FC = () => {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarHideOnKeyboard: true,
         tabBarInactiveTintColor: colors.gray[400],
         tabBarActiveTintColor: colors.red[600],
         tabBarLabelStyle: {
