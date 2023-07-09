@@ -1,5 +1,5 @@
 import { CamSolid, ChatSolid, PeopleSolid } from '@app/components/atoms';
-import { HomePage } from '@app/components/pages';
+import { CallsPage, HomePage } from '@app/components/pages';
 import { colors } from '@app/constants';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React, { useCallback } from 'react';
@@ -54,7 +54,7 @@ export const MainTabs: React.FC = () => {
           title: 'Calls',
         }}
         name="CallTab"
-        component={HomePage}
+        component={CallsPage}
       />
       <Tab.Screen
         options={{
